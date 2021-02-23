@@ -90,12 +90,12 @@ var beforePublish = () => {
   inquirer.prompt(question).then(async (answers) => {
     var projectPath = path.join(fileDir, answers.project)
     if (answers.pull) {
-      // await runPull(projectPath)
+      await runPull(projectPath)
     }
     if (answers.version) {
       await runVersion(projectPath)
     }
-    // await runBuild(projectPath)
+    await runBuild(projectPath)
   });
 };
 

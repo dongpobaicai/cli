@@ -7,7 +7,8 @@ var publishEvent = require('./publish')
 
 
 helloSuggest()
-program.version(version, '-v, --version')
+
+program.version(version, '-v, --version').alias('qd-cli').usage('<command> [项目名称]')
 program.command('publish').description('打包发布').action((cmd, options) => {
   // 找寻当前可发布项目
   // 获取选择参数

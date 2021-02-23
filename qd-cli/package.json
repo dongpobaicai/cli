@@ -1,5 +1,5 @@
 {
-  "name": "stu-pc-cli",
+  "name": "qd-cli",
   "version": "1.0.0",
   "description": "近视防控pc端项目，打包发布工具",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "bin": {
     "qd-cli": "./index.js"
   },
-  "author": "wuyang",
+  "author": "dongpobaicai@qq.com",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.0",
