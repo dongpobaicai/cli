@@ -26,9 +26,24 @@ function bad(){
   console.log(chalk.red(prefix),sep,msg);
 }
 
+function message(repo) {
+  const timeShow = repo.pushed_at || repo.created_at;
+  console.log(
+    " " +
+      chalk.yellow("★") +
+      " " +
+      chalk.blue(repo.name) +
+      " - " +
+      repo.description
+  );
+  console.log("     " + chalk.green("- pushed at : ") + "" + timeShow);
+  console.log();
+}
+
 module.exports = {
   fail: fail,
   success: success,
   warn: warn,
-  bad: bad
+  bad: bad,
+  message: message,
 };

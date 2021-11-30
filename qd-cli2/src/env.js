@@ -1,14 +1,28 @@
 // 环境变量配置
 
-const template_list = [{
-  name: '算法学习',
-  description: "测试模板",
-  type: 'gitee',
-  web_url: 'https://gitee.com/banmaxiaobai/algorithm.git',
-  created_at: '2021/11/30 12:00:00',
-  pushed_at: '2021/11/30 14:30:00'
-}]
-
+const template_list = [
+  {
+    name: "webpack-demo1",
+    description: "webpack模板一",
+    type: "github",
+    web_url: "https://github.com/dongpobaicai/webpack-demo.git",
+    created_at: "2021/11/30 12:00:00",
+    pushed_at: "2021/11/30 14:30:00",
+  },
+  {
+    name: "webpack-demo2",
+    description: "webpack模板二",
+    type: "github",
+    web_url: "https://github.com/dongpobaicai/webpack-demo.git",
+    created_at: "2021/11/30 12:00:00",
+    pushed_at: "2021/11/30 14:30:00",
+  },
+];
+const moduleNameMap = {
+  webpack1: template_list[0],
+  webpack2: template_list[1],
+};
 module.exports = {
-  "template_list": template_list
-}
+  template_list: template_list,
+  moduleNameMap: moduleNameMap,
+};

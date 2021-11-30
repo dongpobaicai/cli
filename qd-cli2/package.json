@@ -16,7 +16,10 @@
   "license": "ISC",
   "devDependencies": {
     "chalk": "^1.1.3",
-    "commander": "^8.3.0"
+    "commander": "^8.3.0",
+    "download-git-repo": "^3.0.2",
+    "inquirer": "^8.2.0",
+    "user-home": "^3.0.0"
   },
   "dependencies": {
     "teslapro-cli": "0.0.7"

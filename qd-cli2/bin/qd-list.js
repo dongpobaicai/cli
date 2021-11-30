@@ -6,8 +6,8 @@
  */
 const env = require("../src/env");
 const logger = require("../src/logger");
-const chalk = require("chalk");
 const success = logger.success;
+const message = logger.message;
 /**
  * 获取所有的模板，这里可以通过接口获取
  */
@@ -21,20 +21,7 @@ success("await ... getting network data");
 fetchTemplates()
   .then(function (data) {
     success("Available official templates:");
-    console.log();
-    data.forEach(function (repo) {
-      const timeShow = repo.pushed_at || repo.created_at;
-      console.log(
-        " " +
-          chalk.yellow("★") +
-          " " +
-          chalk.blue(repo.name) +
-          " - " +
-          repo.description
-      );
-      console.log("     " + chalk.green("- pushed at : ") + "" + timeShow);
-      console.log();
-    });
+    data.forEach(message);
     success("done");
   })
   .catch();

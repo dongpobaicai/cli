@@ -26,3 +26,8 @@
 - program.usage()
 
 `"qd-list": "bin/qd-list.js"` 查看当前可使用的项目模板
+
+- `fetchTemplates` 获取模板数据
+- 特殊展示模板列表
+
+`"qd-search": "bin/qd-search.js"` 根据名称搜索项目模板
