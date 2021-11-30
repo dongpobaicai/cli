@@ -1,0 +1,1 @@
+console.log('hello use qd-cli2')

@@ -87,15 +87,57 @@ var webpackConfig = merge(baseWebpackConfig, {
   },
   devtool: false, // 线上环境关闭调试工具
   output: {}, // 和baseConfig进行合并
-  externals: { // 全局变量配置，通过cdn引入
+  externals: {
+    // 全局变量配置，通过cdn引入
     vue: "vue",
-  }, 
-  plugins: [  // js压缩 css提取 css 压缩
-    new webpack.DefinePlugin({  // 环境变量预设值，防止读取时为空
+  },
+  plugins: [
+    // js压缩 css提取 css 压缩
+    new webpack.DefinePlugin({
+      // 环境变量预设值，防止读取时为空
       "process.env": env,
     }),
-  ], 
+  ],
 });
+```
+
+### 本地运行 `node build/dev-server.js`
+
+```js
+// 检查node、npm的版本
+require('./check-versions')()
+// 通过express创建一个服务器
+var app = express()
+// 申明两个中间件
+// 代码监测，自动编译，避免每次修改代码，都需要重新运行命令
+var devMiddleware = require('webpack-dev-middleware')(compiler, {
+  publicPath: webpackConfig.output.publicPath,
+  quiet: true
+})
+// 热更新
+var hotMiddleware = require('webpack-hot-middleware')(compiler, {
+  log: () => {}
+})
+// 监听compiler更新完毕后，页面reload
+compiler.plugin('compilation', function (compilation) {
+  compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
+    hotMiddleware.publish({ action: 'reload' })
+    cb()
+  })
+})
+
+// 代理中间件配置
+Object.keys(proxyTable).forEach(function (context) {
+  var options = proxyTable[context]
+  if (typeof options === 'string') {
+    options = { target: options }
+  }
+  app.use(proxyMiddleware(options.filter || context, options))
+})
+// 自动打开浏览器
+// 静态资源
+// 解决浏览器，无法找到资源
+app.use(require('connect-history-api-fallback')())
 ```
 
 ## qd-cli 自定义脚手架
