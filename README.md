@@ -2,10 +2,13 @@
 
 ## vue-cli2 + webpack 配置详解 大致项目结构
 
+```js
 ├─qd-cli
+├─qd-cli2
 └─vue-cli2
 ├─build // 打包代码
 └─config // 环境配置
+```
 
 ### 打线上包 `node build/build.js`
 
