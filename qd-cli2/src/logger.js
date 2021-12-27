@@ -2,28 +2,27 @@ const chalk = require('chalk');
 const util = require('util');
 const format = util.format;
 
-const prefix = '    qd-cli';
 const sep = chalk.gray('·');
 
 function fail(){
   const msg = format.apply(format,arguments);
-  console.error(chalk.red(prefix),sep,msg);
+  console.error(chalk.red('   error：'),sep,msg);
   process.exit(1);
 }
 
 function success(){
   const msg = format.apply(format,arguments);
-  console.log(chalk.green(prefix),sep,msg);
+  console.log(chalk.green('   success：'),sep,msg);
 }
 
 function warn(){
   const msg = format.apply(format,arguments);
-  console.log(chalk.yellow(prefix),sep,msg);
+  console.log(chalk.yellow('   warn：'),sep,msg);
 }
 
 function bad(){
   const msg = format.apply(format,arguments);
-  console.log(chalk.red(prefix),sep,msg);
+  console.log(chalk.red('   bad：'),sep,msg);
 }
 
 function message(repo) {

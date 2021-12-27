@@ -31,3 +31,8 @@
 - 特殊展示模板列表
 
 `"qd-search": "bin/qd-search.js"` 根据名称搜索项目模板
+
+`"qd init webpack1 webpack-demo1"` 根据模板文件，快速生成项目
+
+- `webpack1` 模板项目名称
+- `webpack-demo1` 当前本地项目名称

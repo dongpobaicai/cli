@@ -5,7 +5,7 @@ const template_list = [
     name: "webpack-demo1",
     description: "webpack模板一",
     type: "github",
-    web_url: "https://github.com/dongpobaicai/webpack-demo.git",
+    web_url: "github:dongpobaicai/webpack-demo",
     created_at: "2021/11/30 12:00:00",
     pushed_at: "2021/11/30 14:30:00",
   },
@@ -13,7 +13,7 @@ const template_list = [
     name: "webpack-demo2",
     description: "webpack模板二",
     type: "github",
-    web_url: "https://github.com/dongpobaicai/webpack-demo.git",
+    web_url: "github:dongpobaicai/webpack-demo",
     created_at: "2021/11/30 12:00:00",
     pushed_at: "2021/11/30 14:30:00",
   },
@@ -23,6 +23,5 @@ const moduleNameMap = {
   webpack2: template_list[1],
 };
 module.exports = {
-  template_list: template_list,
   moduleNameMap: moduleNameMap,
 };

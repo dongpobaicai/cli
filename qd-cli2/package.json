@@ -19,9 +19,11 @@
     "commander": "^8.3.0",
     "download-git-repo": "^3.0.2",
     "inquirer": "^8.2.0",
+    "ora": "^1.2.0",
+    "rimraf": "^3.0.2",
     "user-home": "^3.0.0"
   },
   "dependencies": {
-    "teslapro-cli": "0.0.7"
+    "metalsmith": "^2.3.0"
   }
 }

@@ -8,5 +8,8 @@ module.exports = {
     return path.isAbsolute(templatePath)
       ? templatePath
       : path.normalize(path.join(process.cwd(), templatePath))
+  },
+  checkVersion: function () {
+    
   }
 }

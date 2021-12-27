@@ -6,22 +6,29 @@
  */
 const env = require("../src/env");
 const logger = require("../src/logger");
-const success = logger.success;
-const message = logger.message;
+const chalk = require("chalk");
+
 /**
  * 获取所有的模板，这里可以通过接口获取
  */
 function fetchTemplates() {
   return new Promise(function (resolve, reject) {
-    resolve(env["template_list"]);
+    resolve(env.moduleNameMap);
   });
 }
 
-success("await ... getting network data");
 fetchTemplates()
-  .then(function (data) {
-    success("Available official templates:");
-    data.forEach(message);
-    success("done");
+  .then(function (templateList) {
+    const keys = Object.keys(templateList);
+    keys.forEach((key) => {
+      console.log(
+        " " +
+          chalk.yellow("★") +
+          " " +
+          chalk.blue(key) +
+          " - " +
+          env.moduleNameMap[key].description
+      );
+    });
   })
   .catch();
